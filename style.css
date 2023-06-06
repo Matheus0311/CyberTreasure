@@ -545,7 +545,6 @@ section {
   border: 0;
   outline: none;
   background-color: var(--black-color);
-  cursor: pointer;
   position: relative;
   font-family: Tomorrow, sans-serif;
   font-size: .85rem;
@@ -741,6 +740,7 @@ section {
   align-items: center;
   background-color: #000;
   box-shadow: 0 0 10px rgba(255, 106, 193, 0.3);
+  animation: glitch-animation 0.3s linear 0s ;
 }
 
 
@@ -853,3 +853,33 @@ section {
 .game-piscar {
   animation: piscar 0.5s infinite;
 }
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px;
+  background-color: rgba(42, 36, 56, 0.9);
+  color: #ff20a2;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: glitch-animation 0.3s linear 0s ;
+
+}
+
+.notification.success {
+  background-color: rgba(30, 165, 98, 0.9);
+  color: #fff;
+}
+
+
+.notification.error {
+  background-color: rgba(215, 56, 94, 0.9);
+  color: #fff;
+}
+
+
+

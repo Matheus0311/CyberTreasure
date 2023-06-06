@@ -56,20 +56,51 @@ function lidarAtualizarTesouro(data) {
   }
 }
 
+// function lidarFimDeJogo(data) {
+//   const idJogadorAtual = socket.id;
+//   const { idVencedor } = data;
+
+  
+//   if (idJogadorAtual === idVencedor) {
+//     alert("Você venceu encontrando mais tesouros!");
+//   } else {
+//     alert("Que pena! Você fez menos pontos do que seu amigo!");
+//   }
+
+//   // Encerra a conexão com o servidor
+//   socket.close();
+// }
+
+
 function lidarFimDeJogo(data) {
   const idJogadorAtual = socket.id;
   const { idVencedor } = data;
 
-  
+  const notification = document.createElement("div");
+  notification.classList.add("notification");
+
   if (idJogadorAtual === idVencedor) {
-    alert("Você venceu encontrando mais tesouros!");
+    notification.textContent = "Você venceu encontrando mais tesouros!";
+    notification.classList.add("success");
   } else {
-    alert("Que pena! Você fez menos pontos do que seu amigo!");
+    notification.textContent = "Que pena! Não foi dessa vez!";
+    notification.classList.add("error");
   }
+
+  document.body.appendChild(notification);
+
+  // Remover a notificação após alguns segundos (opcional)
+  setTimeout(() => {
+    document.body.removeChild(notification);
+  }, 5000);
 
   // Encerra a conexão com o servidor
   socket.close();
 }
+
+
+
+
 
 function lidarJogadorEntrou(data) {
   const { idJogador, nome } = data;
