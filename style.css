@@ -762,7 +762,19 @@ section {
 
 .tesouro.encontrado {
   opacity: 0.5;
-  animation: glitch-animation 0.3s linear 0s ;
+  animation: flutuar 2s infinite ease-in-out, glitch-animation 0.3s linear 0s;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink-animation {
