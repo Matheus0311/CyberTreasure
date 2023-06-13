@@ -3,7 +3,6 @@ const http = require("http");
 const socketIO = require("socket.io");
 const path = require("path");
 
-// Configuração do aplicativo Express
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
